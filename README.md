@@ -4,7 +4,7 @@ A collection of small Python projects built for practice, experimentation, and s
 
 ## Projects Included
 
-- `blackjack/` – Console-based Blackjack game with basic logic and user interaction
+- `blackjack/` – Console-based Blackjack game with basic logic and user interaction  
 - *(More coming soon...)*
 
 ## Why This Repo Exists
@@ -14,5 +14,7 @@ This repo tracks my growth as a developer. These aren't polished apps — they'r
 ## How to Run
 
 Each project is standalone. Just navigate into a folder and run:
+
 ```bash
 python project_name.py
+```
