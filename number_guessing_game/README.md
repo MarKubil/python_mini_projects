@@ -1,20 +1,16 @@
-# Python Mini Projects 🧪
+# 🎯 Number Guessing Game
 
-A collection of small Python projects built for practice, experimentation, and skill sharpening. Each folder contains a self-contained script with its own README and purpose.
+A simple Python terminal game where the player tries to guess a randomly generated number. Built for quick fun and basic input handling practice.
 
-## Projects Included
+## 🛠 Features
 
-- `blackjack/` – Console-based Blackjack game with basic logic and user interaction  
-- *(More coming soon...)*
+- Random number generation between 1 and 100
+- Input validation and feedback
+- ASCII banner for visual flair
+- Tracks number of attempts
 
-## Why This Repo Exists
-
-This repo tracks my growth as a developer. These aren't polished apps — they're tactical exercises in logic, structure, and problem-solving. I use them to test ideas, refactor code, and build muscle memory before tackling larger freelance or portfolio projects.
-
-## How to Run
-
-Each project is standalone. Just navigate into a folder and run:
+## 🚀 How to Run
 
 ```bash
-python project_name.py
+python number_guessing_game.py
 ```
