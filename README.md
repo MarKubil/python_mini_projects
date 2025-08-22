@@ -4,7 +4,8 @@ A collection of small Python projects built for practice, experimentation, and s
 
 ## Projects Included
 
-- `blackjack/` – Console-based Blackjack game with basic logic and user interaction  
+- `blackjack/` – Console-based Blackjack game with basic logic and user interaction
+- `number_guessing_game/` – Simple number guessing game with ASCII banner and input validation
 - *(More coming soon...)*
 
 ## Why This Repo Exists
