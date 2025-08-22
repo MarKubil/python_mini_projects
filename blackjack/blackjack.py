@@ -9,57 +9,85 @@ def calculate_score(cards):
     score = sum(cards)
     ace_count = cards.count(11)
 
+    # Adjust Aces if score is over 21
     while score > 21 and ace_count:
         score -= 10
         ace_count -= 1
-
     return score
 
 def blackjack():
-    # Initialize hands and score
-    your_cards = []
-    computer_cards = []
-    current_score = 0
+    while True:
+        # Prompt user to start the game
+        start = input("Do you want to play a game of Blackjack? (y/n) ")
+        if start == "y":
+            print(pyfiglet.figlet_format("BLACKJACK"))
 
-    # Prompt user to start the game
-    start = input("Do you want to play a game of Blackjack? (y/n) ")
-    if start == "y":
-        print(pyfiglet.figlet_format("BLACKJACK"))
+            # Initialize hands and score
+            your_cards = []
+            computer_cards = []
+            current_score = 0
 
-        # Draw two random cards for the player
-        for _ in range(2):
-            draw = random.choice(cards)
-            your_cards.append(draw)
-            current_score = calculate_score(your_cards)
-
-        # Draw one card for the computer
-        computer_card = random.choice(cards)
-        computer_cards.append(computer_card)
-
-        # Display player's and computer hand and score
-        def display_cards():
-            print(f"Your cards: {your_cards}, current score: {current_score}")
-            print(f"Computer's first card: {computer_cards[0]}")
-        display_cards()
-
-        # Player chooses to draw more cards until they pass or bust
-        while current_score <= 21:
-            more_cards = input("Type 'y' to get another card, anything else to pass: ")
-            if more_cards == "y":
+            # Draw two random cards for the player
+            for _ in range(2):
                 draw = random.choice(cards)
                 your_cards.append(draw)
                 current_score = calculate_score(your_cards)
-                display_cards()
-            else:
-                break  # Exit loop on any non-'y' input
 
-        # Final result based on score
-        if current_score > 21:
-            print("You Lost")
+            # Draw one card for the computer
+            computer_card = random.choice(cards)
+            computer_cards.append(computer_card)
+
+            # Display player's and computer hand and score
+            print(f"Your cards: {your_cards}, current score: {current_score}")
+            print(f"Computer's first card: {computer_cards[0]}")
+
+            # Player decision loop
+            while True:
+                more_cards = input("Type 'y' to get another card, or type 'n' to pass: \n")
+                if more_cards == "y":
+                    draw = random.choice(cards)
+                    your_cards.append(draw)
+                    current_score = calculate_score(your_cards)
+                    print(f"Your cards: {your_cards}, current score: {current_score}")
+                    print(f"Computer's first card: {computer_cards[0]}")
+
+                    # Check for bust
+                    if current_score > 21:
+                        print(pyfiglet.figlet_format("YOU LOST!"))
+                        break
+                    
+                elif more_cards == "n":
+                    computer_score = calculate_score(computer_cards)
+                    
+                    # Computer draws until it beats player score or busts
+                    while computer_score < current_score and computer_score < 21:
+                        computer_draw = random.choice(cards)
+                        computer_cards.append(computer_draw)
+                        computer_score = calculate_score(computer_cards)
+
+                    # Show final hands
+                    print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
+
+                    # Determine result
+                    if computer_score > 21:
+                        print(pyfiglet.figlet_format("YOU WIN!"))
+                        break
+                    elif computer_score > current_score:
+                        print(pyfiglet.figlet_format("YOU LOST!"))
+                        break
+                    elif computer_score == current_score:
+                        print(pyfiglet.figlet_format("IT'S A DRAW!"))
+                        break
+                    else:
+                        print(pyfiglet.figlet_format("YOU WIN!"))
+                        break
+                    
+                else:
+                    break  # Exit loop on invalid input
+
         else:
-            print("You passed. Final hand:", your_cards, "Score:", current_score)
-    else:
-        exit()
+            print("GoodBye!")
+            break
 # Start the game
 blackjack()
 
