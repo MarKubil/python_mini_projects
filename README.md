@@ -4,9 +4,12 @@ A collection of small Python projects built for practice, experimentation, and s
 
 ## Projects Included
 
-- `blackjack/` – Console-based Blackjack game with basic logic and user interaction
-- `number_guessing_game/` – Simple number guessing game with ASCII banner and input validation
-- *(More coming soon...)*
+- `blackjack/` – Console-based Blackjack game with basic logic and user interaction  
+- `number_guessing_game/` – Simple number guessing game with ASCII banner and input validation  
+- `higher_lower_game/` – Number comparison game where users guess if the next value is higher or lower  
+- `coffee_machine/` – Simulates a coffee vending machine with coin logic, resource tracking, and modular design  
+- *(More coming soon...)*  
+
 
 ## Why This Repo Exists
 
